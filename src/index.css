@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --color-bg-dark: #050505;
+  --color-card-dark: #0F0F0F;
+  --color-item-dark: #111111;
+  --color-border-subtle: #222222;
+  --color-accent-gold: #D4AF37;
+  --color-accent-silver: #888888;
+  --color-accent-bronze: #CD7F32;
+  --color-accent-orange: #FF6B2C;
+  --color-accent-blue: #3B82F6;
+  --color-accent-purple: #A855F7;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-dark text-white font-sans antialiased;
+  }
+}
+
+.glass-card {
+  @apply bg-card-dark border border-border-subtle rounded-[32px] overflow-hidden;
+}
+
+.item-card {
+  @apply bg-item-dark border border-border-subtle rounded-2xl transition-all;
+}
+
+.glow-gold {
+  box-shadow: 0 -10px 20px rgba(212, 175, 55, 0.1);
+}
+
+.text-muted {
+  @apply text-[#555555];
+}

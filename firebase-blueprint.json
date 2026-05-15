@@ -1,0 +1,61 @@
+{
+  "entities": {
+    "Player": {
+      "title": "Player",
+      "description": "A player in the Blox Fruits leaderboard",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "motto": { "type": "string" },
+        "avatar": { "type": "string" },
+        "crewLogo": { "type": "string" },
+        "countryFlag": { "type": "string" },
+        "level": { "type": "integer" },
+        "bounty": { "type": "number" },
+        "fruits": { "type": "array", "items": { "type": "string" } },
+        "achievements": { "type": "array", "items": { "type": "string" } },
+        "region": { "type": "string" },
+        "socials": {
+          "type": "object",
+          "properties": {
+            "youtube": { "type": "string" },
+            "discord": { "type": "string" },
+            "talents": { "type": "string" }
+          }
+        },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "level", "bounty", "region"]
+    },
+    "Crew": {
+      "title": "Crew",
+      "description": "A competitive crew in Blox Fruits",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "tag": { "type": "string" },
+        "logo": { "type": "string" },
+        "leaderId": { "type": "string" },
+        "leaderName": { "type": "string" },
+        "motto": { "type": "string" },
+        "bounty": { "type": "number" },
+        "memberCount": { "type": "integer" },
+        "members": { "type": "array", "items": { "type": "string" } },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "leaderId", "bounty"]
+    }
+  },
+  "firestore": {
+    "/players/{playerId}": {
+      "schema": "Player",
+      "description": "Collection of all players"
+    },
+    "/crews/{crewId}": {
+      "schema": "Crew",
+      "description": "Collection of all competitive crews"
+    }
+  }
+}
